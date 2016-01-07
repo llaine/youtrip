@@ -1,0 +1,3 @@
+Template.homepageTpl.rendered = function () {
+
+};
