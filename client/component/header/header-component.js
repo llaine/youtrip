@@ -1,1 +1,3 @@
-'use strict';
+Template.homepageTpl.rendered = function () {
+
+};
