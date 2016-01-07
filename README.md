@@ -4,7 +4,7 @@
 
 Utilisation de `git-flow` http://danielkummer.github.io/git-flow-cheatsheet/
 
-## Packages supplémentaires ajouté dans le projet
+## Packages supplémentaires ajoutés dans le projet
 
 - Bootstrap, pour gérer le css.
 - [FlowRouter](https://github.com/kadirahq/flow-router), pour faire du routing très basique (sans gestion de templating).
