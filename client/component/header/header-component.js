@@ -1,3 +1,3 @@
-Template.homepageTpl.rendered = function () {
-
+Template.header.onCreated = () => {
+  console.log('Home page render')
 };

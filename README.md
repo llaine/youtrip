@@ -11,4 +11,5 @@ Utilisation de `git-flow` http://danielkummer.github.io/git-flow-cheatsheet/
 - [BlazeLayout](https://github.com/kadirahq/blaze-layout), pour comme gestionnaire de template.
 
 
+Le theme qui va être utilisé [clean-blog](https://github.com/IronSummitMedia/startbootstrap-clean-blog)
 
