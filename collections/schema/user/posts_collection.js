@@ -1,4 +1,5 @@
 UserPosts = new Mongo.Collection('user-posts');
+
 UserPosts.schema = new SimpleSchema({
   _id: { type: String },
   post_attributes: {
