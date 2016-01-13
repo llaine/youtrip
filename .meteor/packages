@@ -22,3 +22,8 @@ kadira:blaze-layout
 accounts-password
 ian:accounts-ui-bootstrap-3
 aldeed:simple-schema
+meteorhacks:npm
+
+
+npm-container
+react
