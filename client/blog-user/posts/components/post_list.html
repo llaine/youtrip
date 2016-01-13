@@ -8,6 +8,7 @@
                 <th>Titre</th>
                 <th>Brouillon</th>
                 <th>Date de création</th>
+                <th>Dernière modification</th>
                 <th colspan="1"></th>
             </tr>
         </thead>
@@ -18,6 +19,7 @@
                     <td>{{ post_attributes.title }}</td>
                     <td>{{ is_draft }}</td>
                     <td>{{ lisibleDate }}</td>
+                    <td>{{ lisibleDateModif }}</td>
                     <td>
                         <button data-action="update"
                                 class="btn btn-default btn-sm"

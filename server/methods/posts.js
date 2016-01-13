@@ -1,6 +1,12 @@
 const marked = Meteor.npmRequire('marked');
 
+// TODO ajouter les droits de modif/écriture pour le user.
 Meteor.methods({
+  /**
+   * Créer un nouveau post pour l'utilisateur connecté
+   * @param postAttributes
+   * @returns {boolean}
+   */
   createUserPost: function(postAttributes) {
     const post = {
       post_attributes: {
@@ -8,7 +14,7 @@ Meteor.methods({
         // On transforme le body markdown en HTML à l'aide de la fonction marked
         body: marked(postAttributes.body),
         body_markdown: postAttributes.body,
-        created_at: new Date().getTime(),
+        created_at: new Date(),
         updated_at: null
       },
       is_draft:true, // Par défaut c'est un draft, donc il n'est pas encore publié aka visible sur le blog
@@ -24,9 +30,11 @@ Meteor.methods({
     }
 
     UserPosts.insert(post);
-
-    return true;
   },
+  /**
+   * Mets à jour le post pour un user connecté
+   * @param postAttributes
+   */
   updateUserPost: function (postAttributes) {
     // On vérifie que les attributs sont bien présent
     check(postAttributes, {
@@ -37,15 +45,24 @@ Meteor.methods({
 
     // On mets à jour le document.
     UserPosts.update(
-        _id,
+        { _id:postAttributes._id },
         {
           $set: {
-            title: postAttributes.title,
-            body_markdown: postAttributes.body,
-            body: marked(postAttributes.body),
-            updated_at: new Date().getTime()
+            'post_attributes.title': postAttributes.title,
+            'post_attributes.body_markdown': postAttributes.body,
+            'post_attributes.body': marked(postAttributes.body),
+            'post_attributes.updated_at': new Date()
           }
         }
     );
+  },
+  /**
+   * Supprime un post
+   * @param postId
+   */
+  deleteUserPost: function (postId) {
+    check(postId, String);
+
+    UserPosts.remove(postId);
   }
 });

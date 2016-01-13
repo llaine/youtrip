@@ -21,6 +21,14 @@ Template.blogPostListComponentTpl.helpers({
    */
   'lisibleDate': function() {
     return new moment(new Date(this.post_attributes.created_at)).fromNow();
+  },
+  /**
+   * Retourne la date de modification, si elle est présente.
+   * @returns {string}
+   */
+  'lisibleDateModif': function() {
+    return this.post_attributes.updated_at === null ? 'Pas de modification pour le moment' :
+        new moment(new Date(this.post_attributes.updated_at)).fromNow();
   }
 });
 
@@ -37,7 +45,11 @@ Template.blogPostListComponentTpl.events({
    * @param event
    */
   'click [data-action=delete]': function(event) {
-    console.log(this)
+    if(confirm('Êtes vous sur de vouloir supprimer cet article ?')) {
+      Meteor.call('deleteUserPost', this._id, (err, result) => {
+        if(err) { console.log(error) }
+      });
+    }
   },
   /**
    * Au clique sur le bouton pour voir l'article
