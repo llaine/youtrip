@@ -14,7 +14,6 @@ Meteor.methods({
 
     // On vérifie que le schéma, correspond bien à nos attentes.
     // Sinon on throw l'erreur, pour qu'elle remonte au client.
-    // TODO, fixer l'ereur qui bloque la validation.
     try {
       UserPosts.schema.validate(post);
     } catch(e) {

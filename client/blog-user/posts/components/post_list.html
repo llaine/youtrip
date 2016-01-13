@@ -1,0 +1,24 @@
+<template name="blogPostListComponentTpl">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Titre</th>
+                <th>Crée le</th>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each posts }}
+                <tr>
+                    <td></td>
+                    <td>{{ post_attributes.title }}</td>
+                    <td>{{ post_attributes.created_at }}</td>
+                    <td>Modifier</td>
+                    <td>Supprimer</td>
+                    <td>Voir</td>
+                </tr>
+            {{/each }}
+        </tbody>
+    </table>
+</template>
