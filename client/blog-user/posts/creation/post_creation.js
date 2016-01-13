@@ -1,7 +1,15 @@
 Template.blogPostCreateTpl.events({
+  /**
+   * Lorsque le formulaire est submité en appuyant sur "valider".
+   * On récupère la valeur des attributs du formulaire et on ajoute
+   * à la fonction de suppression
+   * TODO : Rajouter la gestion des erreurs
+   * @param event
+   */
   'submit form': (event) => {
-    // Stop l'envoie du form.
+    // Stop le submit du form.
     event.preventDefault();
+
     // On récupère le formulaire dans le DOM
     const form = $(event.currentTarget);
 
@@ -12,11 +20,14 @@ Template.blogPostCreateTpl.events({
     const title = titleInput.val();
     const body = bodyInput.val();
 
-    // On apelle la fonction en back pour créer un user.
+    // On apelle la fonction en back pour créer un post.
     Meteor.call('createUserPost',
       { title, body },
       (error, result) => {
         if(!error) {
+          titleInput.value = '';
+          bodyInput.value = '';
+
           FlowRouter.redirect('/blog');
         } else {
           console.log(error);

@@ -1,24 +1,45 @@
 <template name="blogPostListComponentTpl">
+    {{#if isPostsEmpty }}
+    <h4>Mes articles</h4>
     <table class="table">
         <thead>
             <tr>
                 <th>#</th>
                 <th>Titre</th>
-                <th>Crée le</th>
-                <th colspan="3"></th>
+                <th>Brouillon</th>
+                <th>Date de création</th>
+                <th colspan="1"></th>
             </tr>
         </thead>
         <tbody>
             {{#each posts }}
                 <tr>
-                    <td></td>
+                    <td>{{@index}}</td>
                     <td>{{ post_attributes.title }}</td>
-                    <td>{{ post_attributes.created_at }}</td>
-                    <td>Modifier</td>
-                    <td>Supprimer</td>
-                    <td>Voir</td>
+                    <td>{{ is_draft }}</td>
+                    <td>{{ lisibleDate }}</td>
+                    <td>
+                        <button data-action="update"
+                                class="btn btn-default btn-sm"
+                                title="Modifier l'article">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button data-action="delete"
+                                class="btn btn-default btn-sm"
+                                title="Supprimer l'article">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                        <button data-action="see"
+                                class="btn btn-default btn-sm"
+                                title="Voir l'article">
+                            <span class="glyphicon glyphicon-share-alt"></span>
+                        </button>
+                    </td>
                 </tr>
             {{/each }}
         </tbody>
     </table>
+    {{ else }}
+        <p>Aucun article écrit pour le moment.</p>
+    {{/if }}
 </template>

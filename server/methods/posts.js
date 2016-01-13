@@ -7,8 +7,11 @@ Meteor.methods({
         title: postAttributes.title,
         // On transforme le body markdown en HTML à l'aide de la fonction marked
         body: marked(postAttributes.body),
-        created_at: new Date().getTime()
+        body_markdown: postAttributes.body,
+        created_at: new Date().getTime(),
+        updated_at: null
       },
+      is_draft:true, // Par défaut c'est un draft, donc il n'est pas encore publié aka visible sur le blog
       user_id: Meteor.userId()
     };
 
@@ -23,5 +26,26 @@ Meteor.methods({
     UserPosts.insert(post);
 
     return true;
+  },
+  updateUserPost: function (postAttributes) {
+    // On vérifie que les attributs sont bien présent
+    check(postAttributes, {
+      _id: String,
+      title: String,
+      body: String
+    });
+
+    // On mets à jour le document.
+    UserPosts.update(
+        _id,
+        {
+          $set: {
+            title: postAttributes.title,
+            body_markdown: postAttributes.body,
+            body: marked(postAttributes.body),
+            updated_at: new Date().getTime()
+          }
+        }
+    );
   }
 });
