@@ -1,0 +1,97 @@
+
+.blog-navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+.blog-navbar-default .blog-navbar-brand {
+    color: #777;
+}
+.blog-navbar-default .blog-navbar-brand:hover,
+.blog-navbar-default .blog-navbar-brand:focus {
+    color: #5e5e5e;
+    background-color: transparent;
+}
+.blog-navbar-default .blog-navbar-text {
+    color: #777;
+}
+.blog-navbar-default .blog-navbar-nav > li > a {
+    color: #777;
+}
+.blog-navbar-default .blog-navbar-nav > li > a:hover,
+.blog-navbar-default .blog-navbar-nav > li > a:focus {
+    color: #333;
+    background-color: transparent;
+}
+.blog-navbar-default .blog-navbar-nav > .blog-active > a,
+.blog-navbar-default .blog-navbar-nav > .blog-active > a:hover,
+.blog-navbar-default .blog-navbar-nav > .blog-active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+}
+.blog-navbar-default .blog-navbar-nav > .blog-disabled > a,
+.blog-navbar-default .blog-navbar-nav > .blog-disabled > a:hover,
+.blog-navbar-default .blog-navbar-nav > .blog-disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+}
+.blog-navbar-default .blog-navbar-toggle {
+    border-color: #ddd;
+}
+.blog-navbar-default .blog-navbar-toggle:hover,
+.blog-navbar-default .blog-navbar-toggle:focus {
+    background-color: #ddd;
+}
+.blog-navbar-default .blog-navbar-toggle .blog-icon-bar {
+    background-color: #888;
+}
+.blog-navbar-default .blog-navbar-collapse,
+.blog-navbar-default .blog-navbar-form {
+    border-color: #e7e7e7;
+}
+.blog-navbar-default .blog-navbar-nav > .blog-open > a,
+.blog-navbar-default .blog-navbar-nav > .blog-open > a:hover,
+.blog-navbar-default .blog-navbar-nav > .blog-open > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+    .blog-navbar-default .blog-navbar-nav .blog-open .blog-dropdown-menu > li > a {
+        color: #777;
+    }
+    .blog-navbar-default .blog-navbar-nav .blog-open .blog-dropdown-menu > li > a:hover,
+    .blog-navbar-default .blog-navbar-nav .blog-open .blog-dropdown-menu > li > a:focus {
+        color: #333;
+        background-color: transparent;
+    }
+    .blog-navbar-default .blog-navbar-nav .blog-open .blog-dropdown-menu > .blog-active > a,
+    .blog-navbar-default .blog-navbar-nav .blog-open .blog-dropdown-menu > .blog-active > a:hover,
+    .blog-navbar-default .blog-navbar-nav .blog-open .blog-dropdown-menu > .blog-active > a:focus {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+    .blog-navbar-default .blog-navbar-nav .blog-open .blog-dropdown-menu > .blog-disabled > a,
+    .blog-navbar-default .blog-navbar-nav .blog-open .blog-dropdown-menu > .blog-disabled > a:hover,
+    .blog-navbar-default .blog-navbar-nav .blog-open .blog-dropdown-menu > .blog-disabled > a:focus {
+        color: #ccc;
+        background-color: transparent;
+    }
+}
+.blog-navbar-default .blog-navbar-link {
+    color: #777;
+}
+.blog-navbar-default .blog-navbar-link:hover {
+    color: #333;
+}
+.blog-navbar-default .blog-btn-link {
+    color: #777;
+}
+.blog-navbar-default .blog-btn-link:hover,
+.blog-navbar-default .blog-btn-link:focus {
+    color: #333;
+}
+.blog-navbar-default .blog-btn-link[disabled]:hover,
+fieldset[disabled] .blog-navbar-default .blog-btn-link:hover,
+.blog-navbar-default .blog-btn-link[disabled]:focus,
+fieldset[disabled] .blog-navbar-default .blog-btn-link:focus {
+    color: #ccc;
+}
