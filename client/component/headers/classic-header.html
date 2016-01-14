@@ -1,7 +1,10 @@
-<template name="header">
+<!--
+To use this navbar, just remove '-old' in template name
+-->
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default blog-navbar-default navbar-custom blog-navbar-custom navbar-fixed-top">
+<template name="classicHeader">
+
+    <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- La navbar header pour le mobile -->
             <div class="navbar-header">
@@ -16,13 +19,13 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav blog-nav navbar-nav blog-navbar-nav">
+                <ul class="nav navbar-nav ">
                     {{# if currentUser }}
                         <li><a href="/blog">Dashboard</a></li>
                         <li><a href="/blog/post/new">New Post</a></li>
                     {{/if }}
                 </ul>
-                <ul class="navbar-right nav blog-nav navbar-nav blog-navbar-nav ">
+                <ul class="nav navbar-nav navbar-right">
                     {{> loginButtons}}
                 </ul>
             </div><!-- /.navbar-collapse -->
