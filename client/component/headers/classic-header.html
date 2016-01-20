@@ -23,6 +23,7 @@ To use this navbar, just remove '-old' in template name
                     {{# if currentUser }}
                         <li><a href="/blog">Dashboard</a></li>
                         <li><a href="/blog/post/new">New Post</a></li>
+                        <li><a href="/feed/{{ currentUser._id }}">My Blog</a></li>
                     {{/if }}
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
