@@ -9,6 +9,17 @@ Template.persoBlogTpl.rendered = function() {
 };
 
 Template.persoBlogTpl.helpers({
+
     'IdBlogPage': () => FlowRouter.current().params.idUser,
+
+    'LastName': function() {
+        var user = Meteor.users.findOne({_id: FlowRouter.current().params.idUser});
+        return user.profile.lastName;
+    },
+
+    'FirstName': function() {
+        var user = Meteor.users.findOne({_id: FlowRouter.current().params.idUser});
+        return user.profile.firstName;
+    }
 
 });
