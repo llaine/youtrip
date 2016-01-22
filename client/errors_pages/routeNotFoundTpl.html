@@ -1,3 +1,16 @@
 <template name="notFoundTpl">
-    Erreur page non trouvée.
+    {{> blogHeader }}
+    <header class="blog-intro-header" style="background-image: url('img/notfound-bg.jpg')">
+        <div class="container">
+            <div class="row blog-row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="blog-site-heading">
+                        <h3>404 : Page Introuvable</h3>
+                        <hr class="small blog-small">
+                        <span class="blog-subheading"><a class="notfound" href="/feed/{{ currentUser._id }}">Retour vers mon blog</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 </template>
