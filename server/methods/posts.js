@@ -40,7 +40,9 @@ Meteor.methods({
     check(postAttributes, {
       _id: String,
       title: String,
-      body: String
+      body: String,
+      lon: String,
+      lat: String
     });
 
     // On mets à jour le document.

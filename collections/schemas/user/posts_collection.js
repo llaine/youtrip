@@ -9,6 +9,8 @@ UserPosts.schema = new SimpleSchema({
   'post_attributes.$.title': { type : String },
   'post_attributes.$.body': { type : String },
   'post_attributes.$.body_markdown': { type : String },
+  'post_attributes.$.lon': { type : String },
+  'post_attributes.$.lat': { type : String },
   // TODO Pour plus tard : rajouter les comments
   'post_attributes.$.created_at': { type: Date },
   'post_attributes.$.updated_at': { type: Date },

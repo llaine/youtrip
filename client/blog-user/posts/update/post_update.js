@@ -39,3 +39,4 @@ Template.blogPostUpdateTpl.events({
     );
   }
 });
+
