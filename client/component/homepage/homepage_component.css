@@ -1,0 +1,169 @@
+
+#circle {
+    width: 150px;
+    height: 150px; background: url('img/home-bg.jpg') no-repeat silver ; -moz-border-radius: 50px;
+     -webkit-border-radius: 150px;
+     border-radius: 150px;
+     }
+
+#circle1{
+    /*margin:10px;*/
+    width: 150px;
+    height: 150px; background: #ff35ab; -moz-border-radius: 50px;
+     -webkit-border-radius: 150px;
+     border-radius: 150px;
+    text-align:center;
+    line-height: 150px;
+
+}
+/*   nav{ position: relative; float: left} */
+
+#p_center
+{
+    /* On a indiqué une largeur (obligatoire) */
+    margin: auto; /* On peut donc demander à ce que le bloc soit centré avec auto */
+    border: none;
+    text-align: center;
+    align: center;
+    padding: 40px;
+    margin-bottom: 20px;
+
+}
+p{
+    padding: 40px;
+    margin-bottom: 10px;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+
+body {
+    margin-bottom: 120px;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+#conteneur
+{
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: space-around;
+}
+
+footer{
+
+    border-top: double;
+    border-top-color: deeppink;
+    font-size: small;
+}
+#footer-outer #copyright
+{
+    padding: 20px 0px;
+    font-size: 12px;
+    margin-top: auto;
+    background-color: #1f1f1f;
+    border-top: 1px solid #3a3a3a;
+    color: #777;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+
+/**********      About Carousel      *************/
+.carousel {
+    margin-top: 51px;
+}
+
+.carousel .container {
+    position: relative;
+    z-index: 9;
+}
+
+.carousel-control {
+    height: 80px;
+    margin-top: 0;
+    font-size: 60px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    background-color: transparent;
+    border: 0;
+    z-index: 10;
+}
+
+.carousel .item {
+    height: 400px;
+}
+.carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 600px;
+}
+
+.carousel-caption {
+    background-color: transparent;
+    position: static;
+    max-width: 550px;
+    padding: 0 20px;
+    margin-top: 200px;
+}
+.carousel-caption h1,
+.carousel-caption .lead {
+    margin: 0;
+    line-height: 1.25;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+.carousel-caption .btn {
+    margin-top: 10px;
+}
+
+@media (max-width: 979px) {
+    .carousel .item {
+        height: 400px;
+    }
+    .carousel img {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    .carousel .item {
+        height: 200px;
+    }
+
+    .carousel img {
+        min-height: 200px;
+        min-width: none;
+    }
+
+    .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+    }
+
+    .carousel-caption h1 {
+        font-size: 30px;
+    }
+
+    .carousel-caption .lead,
+    .carousel-caption .btn {
+        font-size: 18px;
+    }
+}
+
+
+
+/*********    About 'Section'    ********/
+section{
+    border-bottom-color: #e4b9c0;
+    border-bottom-style: dotted;
+    border-bottom-width: thin;
+}
