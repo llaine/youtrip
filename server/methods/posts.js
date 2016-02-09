@@ -7,7 +7,7 @@ Meteor.methods({
    * @param postAttributes
    * @returns {boolean}
    */
-  createUserPost: function(postAttributes) {
+  createUserPost: function (postAttributes) {
     const post = {
       post_attributes: {
         title: postAttributes.title,
@@ -17,7 +17,7 @@ Meteor.methods({
         created_at: new Date(),
         updated_at: null
       },
-      is_draft:true, // Par défaut c'est un draft, donc il n'est pas encore publié aka visible sur le blog
+      is_draft: true, // Par défaut c'est un draft, donc il n'est pas encore publié aka visible sur le blog
       user_id: Meteor.userId()
     };
 
@@ -25,7 +25,7 @@ Meteor.methods({
     // Sinon on throw l'erreur, pour qu'elle remonte au client.
     try {
       UserPosts.schema.validate(post);
-    } catch(e) {
+    } catch (e) {
       throw (e);
     }
 
@@ -45,7 +45,7 @@ Meteor.methods({
 
     // On mets à jour le document.
     UserPosts.update(
-        { _id:postAttributes._id },
+        {_id: postAttributes._id},
         {
           $set: {
             'post_attributes.title': postAttributes.title,
@@ -64,5 +64,26 @@ Meteor.methods({
     check(postId, String);
 
     UserPosts.remove(postId);
+  },
+
+
+
+  /**
+   * Methode qui envoie un email sur l'adresse youtrip.contact@gmail.com. Dans ce mail, on aura l'adresse de l'utilisateur qui souhaite
+   * avoir un complément d'information.
+   */
+
+  sendEmail: function (subject, text) {
+    check([subject, text], [String]);
+
+    this.unblock();
+
+    Email.send({
+      to: 'youtrip.contact@gmail.com',
+      subject: subject,
+      text: text
+    });
   }
+
+
 });
