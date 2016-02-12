@@ -27,3 +27,6 @@ meteorhacks:npm
 npm-container
 momentjs:moment
 check
+cfs:standard-packages
+cfs:gridfs
+cfs:filesystem

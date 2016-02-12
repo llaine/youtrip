@@ -11,6 +11,11 @@ Meteor.Schema.UserProfile = new SimpleSchema({
     type: String,
     label: 'Last Name',
     optional: true
+  },
+  profileCover: {
+    type: String,
+    label: 'Profile Cover',
+    optional: true,
   }
 }),
 

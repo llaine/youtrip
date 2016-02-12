@@ -1,0 +1,19 @@
+<template name="uploadMainPhotoComponentTpl">
+    <label class="image-upload col-md-4">
+        <h2>Upload Photo</h2>
+        <input multiple class="file fileInput" type="file"/>
+    </label>
+    <div class="col-md-8">
+    {{#if profileCoverImg}}
+        <div class="imageView">
+            <div>
+                <a href="{{profileCoverImg.url}}" target="_blank"><img src="{{profileCoverImg.url}}" alt="" class="thumbnail" style="width: 700px; height: 400px;"/></a>
+            </div>
+        </div>
+    {{else}}
+        <div>
+            <p>Aucune image de profile actuellement</p>
+        </div>
+    {{/if}}
+    </div>
+</template>
