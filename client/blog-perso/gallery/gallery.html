@@ -1,0 +1,60 @@
+<template name="galleryTpl">
+    <h1>Hello</h1>
+    <div id="links">
+        <a href="https://farm2.static.flickr.com/1507/24331408963_e7975e4ea8_b.jpg" title="Orange glow" data-gallery="">
+            <img src="https://farm2.static.flickr.com/1507/24331408963_e7975e4ea8_s.jpg">
+        </a>
+        <a href="https://farm2.static.flickr.com/1557/24859857941_fe2d564919_b.jpg" title="A Winter's View....." data-gallery="">
+            <img src="https://farm2.static.flickr.com/1557/24859857941_fe2d564919_s.jpg">
+        </a>
+        <a href="https://farm2.static.flickr.com/1483/24864033411_a0a3d60bc9_b.jpg" title="Home Sweet Home" data-gallery="">
+            <img src="https://farm2.static.flickr.com/1483/24864033411_a0a3d60bc9_s.jpg">
+        </a>
+        <a href="https://farm2.static.flickr.com/1544/24928842856_bc51212ea4_b.jpg" title="Wealdenblur" data-gallery="">
+            <img src="https://farm2.static.flickr.com/1544/24928842856_bc51212ea4_s.jpg">
+        </a>
+        <a href="https://farm2.static.flickr.com/1635/24661971770_4535aa1b74_b.jpg" title="Quartet: Explored 2.11.2016" data-gallery="">
+            <img src="https://farm2.static.flickr.com/1635/24661971770_4535aa1b74_s.jpg">
+        </a>
+        <a href="https://farm2.static.flickr.com/1601/24656794410_a93a5f681a_b.jpg" title="Venice" data-gallery="">
+            <img src="https://farm2.static.flickr.com/1601/24656794410_a93a5f681a_s.jpg">
+        </a>
+        <a href="https://farm2.static.flickr.com/1452/24832007552_e610bb3841_b.jpg" title="c a u s e w a y | øksnes, norway" data-gallery="">
+            <img src="https://farm2.static.flickr.com/1452/24832007552_e610bb3841_s.jpg">
+        </a>
+    </div>
+
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <!-- The container for the modal slides -->
+        <div class="slides"></div>
+        <!-- Controls for the borderless lightbox -->
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+        <!-- The modal dialog, which will be used to wrap the lightbox content -->
+        <div class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body next"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left prev">
+                            <i class="glyphicon glyphicon-chevron-left"></i>
+                            Previous
+                        </button>
+                        <button type="button" class="btn btn-primary next">
+                            Next
+                            <i class="glyphicon glyphicon-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
