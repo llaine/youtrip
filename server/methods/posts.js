@@ -14,6 +14,10 @@ Meteor.methods({
         // On transforme le body markdown en HTML à l'aide de la fonction marked
         body: marked(postAttributes.body),
         body_markdown: postAttributes.body,
+        // NICO ADD
+        // Geoloc
+        lon: postAttributes.lon,
+        lat: postAttributes.lat,
         created_at: new Date(),
         updated_at: null
       },
@@ -40,7 +44,11 @@ Meteor.methods({
     check(postAttributes, {
       _id: String,
       title: String,
-      body: String
+      body: String,
+      // NICO ADD
+      // Geoloc
+      lon: String,
+      lat: String
     });
 
     // On mets à jour le document.
@@ -51,6 +59,10 @@ Meteor.methods({
             'post_attributes.title': postAttributes.title,
             'post_attributes.body_markdown': postAttributes.body,
             'post_attributes.body': marked(postAttributes.body),
+            // NICO ADD
+            // Geoloc
+            'post_attributes.lon': postAttributes.lon,
+            'post_attributes.lat': postAttributes.lat,
             'post_attributes.updated_at': new Date()
           }
         }

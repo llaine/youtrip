@@ -19,13 +19,20 @@ Template.blogPostUpdateTpl.events({
     // On récupère les valeurs des input du formulaire.
     const titleInput = form.find('[name="title"]');
     const bodyInput = form.find('[name="body"]');
+    // Geoloc
+    const lonInput = form.find('[name="lonNew"]');
+    const latInput = form.find('[name="latNew"]');
 
     const title = titleInput.val();
     const body = bodyInput.val();
+    // Geoloc
+    const lon = lonInput.val();
+    const lat = latInput.val();
     const _id = FlowRouter.current().params.id;
 
     Meteor.call('updateUserPost',
-        { _id, title, body },
+        //Geoloc
+        { _id, title, body, lon, lat },
         (error, result) => {
           if(!error) {
             titleInput.value = '';
@@ -37,5 +44,6 @@ Template.blogPostUpdateTpl.events({
           }
         }
     );
+
   }
 });
