@@ -14,6 +14,7 @@ Meteor.methods({
         // On transforme le body markdown en HTML à l'aide de la fonction marked
         body: marked(postAttributes.body),
         body_markdown: postAttributes.body,
+        arrayIdImg: postAttributes.arrayIdImg,
         geoloc: postAttributes.position,
         created_at: new Date(),
         updated_at: null
@@ -52,6 +53,7 @@ Meteor.methods({
             'post_attributes.title': postAttributes.title,
             'post_attributes.body_markdown': postAttributes.body,
             'post_attributes.body': marked(postAttributes.body),
+            'post_attributes.arrayIdImg': postAttributes.arrayIdImg,
             'post_attributes.updated_at': new Date()
           }
         }

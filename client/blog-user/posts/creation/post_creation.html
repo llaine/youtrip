@@ -1,12 +1,12 @@
 <template name="blogPostCreateTpl">
 
     {{> classicHeader }}
-<div class="row">
-    <ol class="breadcrumb">
-        <li><a href="/blog">Dashboard</a></li>
-        <li class="active">New Article</li>
-    </ol>
-</div>
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="/blog">Dashboard</a></li>
+            <li class="active">New Article</li>
+        </ol>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <form class="form-horizontal">
@@ -28,11 +28,42 @@
                     <br>
                     <div class="col-md-4">
                         <textarea class="form-control input-md" name="body" id="body" cols="60" rows="10"></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <h2>Upload multiple</h2>
+                        <label class="image-upload col-md-4">
+                            <input multiple class="file fileInput" type="file"/>
+                        </label>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Id Image</th>
+                                <th>/</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{#each uploadImgTmp }}
+                                <tr>
+                                    <td>{{ _id }}</td>
+                                    <td>
+                                        <a
+                                                class="delete-img btn btn-default btn-sm"
+                                                title="Supprimer la photo">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {{/each }}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-12">
                         <button type="submit" class="btn btn-default pull-right">Valider</button>
                     </div>
                 </div>
             </form>
         </div>
+
     </div>
     <footer>
         {{> classicFooterTpl }}
