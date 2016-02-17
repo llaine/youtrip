@@ -12,6 +12,10 @@ UserPosts.schema = new SimpleSchema({
   // TODO Pour plus tard : rajouter les comments
   'post_attributes.$.created_at': { type: Date },
   'post_attributes.$.updated_at': { type: Date },
+  'post_attributes.$.geoloc': { type: Object, blackbox:true },
+  // La latitude longitude
+  'post_attributes.$.geoloc.$.lat': { type: String, optional: true },
+  'post_attributes.$.geoloc.$.lng': { type: String, optional: true },
   user_id: { type: String },
   'is_draft': { type: Boolean }
 });
