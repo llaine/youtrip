@@ -17,6 +17,13 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="title" class="col-md-4 control-label">Localisation</label>
+                    <div class="col-md-4">
+                        {{ nameConverted }}
+                        {{> mapTpl }}
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="body" class="col-md-4 control-label">Corps de l'article</label>
                     <br>
                     <div class="col-md-4">
@@ -24,18 +31,10 @@
                         <button type="submit" class="btn btn-default pull-right">Valider</button>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="title" class="col-md-4 control-label">Localisation</label>
-                    <div class="col-md-4">
-                        {{ nameConverted }}
-                        {{> mapTpl }}
-                    </div>
-                </div>
             </form>
         </div>
     </div>
     <footer>
-
         {{> classicFooterTpl }}
     </footer>
 

@@ -30,7 +30,7 @@ class MapFactory {
    */
   addMarker(position) {
     // On supprime le marker de toute façon
-    if(this.marker) {
+    if (this.marker) {
       this.map.removeLayer(this.marker);
     }
 
@@ -39,7 +39,12 @@ class MapFactory {
 
     $.get(`http://maps.googleapis.com/maps/api/geocode/json?latlng=${position.lat},${position.lng}&sensor=false`)
     .then(function(res) {
-      Session.set('markerPosition', res);
+      if(res.results) {
+        Session.set('markerPosition', {
+          position: position,
+          address: res.results[0].formatted_address
+        });
+      }
     });
     //Session.set('markerPosition', )
     marker.on('click', function() {

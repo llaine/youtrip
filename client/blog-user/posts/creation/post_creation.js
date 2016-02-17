@@ -1,7 +1,7 @@
 Template.blogPostCreateTpl.helpers({
   'nameConverted': () => {
     if(Session.get('markerPosition')) {
-      return Session.get('markerPosition').results[0].formatted_address;
+      return Session.get('markerPosition').address;
     }
   }
 });
@@ -27,10 +27,11 @@ Template.blogPostCreateTpl.events({
 
     const title = titleInput.val();
     const body = bodyInput.val();
+    const position = Session.get('markerPosition').position;
 
     // On apelle la fonction en back pour créer un post.
     Meteor.call('createUserPost',
-      { title, body },
+      { title, body, position },
       (error, result) => {
         if(!error) {
           titleInput.value = '';
