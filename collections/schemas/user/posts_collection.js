@@ -15,3 +15,36 @@ UserPosts.schema = new SimpleSchema({
   user_id: { type: String },
   'is_draft': { type: Boolean }
 });
+
+
+UserPosts.allow({
+  /**
+   *
+   * @param userId
+   * @param doc
+   * @returns {boolean}
+   */
+  insert: function(userId, doc) {
+    return true;
+  },
+  /**
+   *
+   * @param userId
+   * @param doc
+   * @param fieldNames
+   * @param modifier
+   * @returns {boolean}
+   */
+  update: function(userId, doc, fieldNames, modifier) {
+    return true;
+  },
+  /**
+   *
+   * @param userId
+   * @param doc
+   * @returns {boolean}
+   */
+  remove: function(userId, doc) {
+    return true;
+  }
+});

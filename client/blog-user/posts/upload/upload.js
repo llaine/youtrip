@@ -5,7 +5,6 @@
 Meteor.subscribe('images');
 
 Template.uploadMainPhotoComponentTpl.helpers({
-
     'profileCoverImg': function() {
         var idProfileCover = Meteor.user().profile.profileCover;
         if(idProfileCover){
@@ -20,7 +19,7 @@ Template.uploadMainPhotoComponentTpl.helpers({
     }
 });
 Template.uploadMainPhotoComponentTpl.events({
-    'change .fileInput': function(event){
+    'change .fileInput': function(event) {
 
         var file = event.target.files[0];
 
@@ -35,7 +34,7 @@ Template.uploadMainPhotoComponentTpl.events({
                     profileCover: fileObj._id
                 }}});
                 console.log('Perso image updated');
-            };
+            }
         });
-    },
+    }
 });
