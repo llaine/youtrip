@@ -1,3 +1,11 @@
+Template.blogPostCreateTpl.helpers({
+  'nameConverted': () => {
+    if(Session.get('markerPosition')) {
+      return Session.get('markerPosition').results[0].formatted_address;
+    }
+  }
+});
+
 Template.blogPostCreateTpl.events({
   /**
    * Lorsque le formulaire est submité en appuyant sur "valider".
