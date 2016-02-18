@@ -1,15 +1,15 @@
 <template name="blogPostListComponentTpl">
 
     {{#if isPostsEmpty }}
-    <h4>Mes articles</h4>
+    <h4>My posts</h4>
     <table class="table">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Titre</th>
-                <th>Brouillon</th>
-                <th>Date de création</th>
-                <th>Dernière modification</th>
+                <th>Title</th>
+                <th>Draft</th>
+                <th>Date of creation </th>
+                <th>Last modification</th>
                 <th colspan="1"></th>
             </tr>
         </thead>
@@ -24,17 +24,17 @@
                     <td>
                         <button data-action="update"
                                 class="btn btn-default btn-sm"
-                                title="Modifier l'article">
+                                title="Modify">
                             <span class="glyphicon glyphicon-pencil"></span>
                         </button>
                         <button data-action="delete"
                                 class="btn btn-default btn-sm"
-                                title="Supprimer l'article">
+                                title="Delete">
                             <span class="glyphicon glyphicon-trash"></span>
                         </button>
                         <button data-action="see"
                                 class="btn btn-default btn-sm"
-                                title="Voir l'article">
+                                title="See the post">
                             <span class="glyphicon glyphicon-share-alt"></span>
                         </button>
                     </td>
@@ -43,7 +43,7 @@
         </tbody>
     </table>
     {{ else }}
-        <p>Aucun article écrit pour le moment.</p>
+        <p> Any article writes for the moment.</p>
     {{/if }}
 
 
