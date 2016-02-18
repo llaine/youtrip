@@ -7,18 +7,6 @@ Meteor.subscribe('images');
 
 Template.persoBlogTpl.rendered = function() {
 
-/*
-    var user = Meteor.user();
-    if( !user.profile.profileCover ) {
-        $('.blog-intro-header').css("background-image", "url(../img/home-bg.jpg)");
-        console.log('Aucune image définie. Affichage de l image par défaut');
-    } else {
-        var picture = Images.findOne({_id: user.profile.profileCover});
-        console.log(picture.url);
-        console.log('Image affichée: '+ user.profile.profileCover);
-        $('.blog-intro-header').css("background-image", "url(" + picture.url + ")");
-    }
- */
 };
 
 Template.persoBlogTpl.helpers({
