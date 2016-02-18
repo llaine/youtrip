@@ -1,7 +1,6 @@
 Template.blogPostCreateTpl.rendered = () => {
-  if(Session.get('uploadImgIdTmp') == null){
-    Session.set('uploadImgIdTmp', []);
-  }
+  Session.setDefault('uploadImgIdTmp', []);
+  Session.setDefault('uploadImgIdTmp', null);
 };
 
 Template.blogPostCreateTpl.helpers({
