@@ -1,4 +1,10 @@
+CurrentMap = {};
+
 class MapFactory {
+  /**
+   * Constructor de l'objet crée la map sur une div
+   * @param mapId
+   */
   constructor(mapId = 'map') {
     Session.set('markerPosition', null);
     this.mapId = mapId;
@@ -28,8 +34,8 @@ class MapFactory {
    * Ajout un marker sur la carte en fonction d'une position.
    * @param position
    */
-  addMarker(position) {
-    // On supprime le marker de toute façon
+  addMarkerWithLoc(position) {
+    // On supprime le marker de toute façon, puisqu'il ne peut en y avoir qu'un seul sur la map
     if (this.marker) {
       this.map.removeLayer(this.marker);
     }
@@ -37,6 +43,7 @@ class MapFactory {
     const marker = L.marker(position).addTo(this.map);
     const map = this.map;
 
+    // Geocoding reverse
     $.get(`http://maps.googleapis.com/maps/api/geocode/json?latlng=${position.lat},${position.lng}&sensor=false`)
     .then(function(res) {
       if(res.results) {
@@ -46,7 +53,7 @@ class MapFactory {
         });
       }
     });
-    //Session.set('markerPosition', )
+
     marker.on('click', function() {
       map.removeLayer(this);
     });
@@ -61,12 +68,21 @@ class MapFactory {
   on(eventName, callback) {
     this.map.on(eventName, callback);
   }
+
+  addSimpleMarker(position) {
+    L.marker(position).addTo(this.map);
+  }
 }
 
 Template.mapTpl.rendered = function() {
   const map = new MapFactory();
+  const markersTabs = Session.get('markersForFeed') || [];
 
-  map.on('click', function(e) {
-    map.addMarker(e.latlng);
-  });
+  if(markersTabs) {
+    map.on('click', function(e) {
+      map.addMarkerWithLoc(e.latlng);
+    });
+  }
+
+  markersTabs.map((position) => map.addSimpleMarker(position));
 };

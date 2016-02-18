@@ -1,23 +1,28 @@
 <template name="galleriesTpl">
-
-
-
-    {{#each postsList }}
-        <div class="gallery">
-            <h1>{{ title }}</h1>
-            <div>{{ body }}</div>
-            <div id="links">
-                {{#each images}}
-                    <a href="{{ url }}" title="{{ ../title}}" data-gallery="" target="_blank">
-                        <img src="{{ url }}" alt="" style="width: 75px; height: 75px;">
-                    </a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                {{#each postsList }}
+                    <div class="gallery">
+                        <h1>{{ title }}</h1>
+                        <div>{{ body }}</div>
+                        <div id="links">
+                            {{#each images}}
+                                <a href="{{ url }}" title="{{ ../title}}" data-gallery="" target="_blank">
+                                    <img src="{{ url }}" alt="" style="width: 75px; height: 75px;">
+                                </a>
+                            {{/each}}
+                        </div>
+                        {{ map }}
+                    </div>
+                    <hr/>
                 {{/each}}
             </div>
+            <div class="col-md-6">
+                {{> mapTpl }}
+            </div>
         </div>
-        <hr/>
-    {{/each}}
-
-
+    </div>
     <div id="blueimp-gallery" class="blueimp-gallery">
         <!-- The container for the modal slides -->
         <div class="slides"></div>
