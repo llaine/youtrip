@@ -1,11 +1,18 @@
 <template name="galleriesTpl">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6">
-                {{#each postsList }}
-                    <div class="gallery">
-                        <h1>{{ title }}</h1>
-                        <div>{{{ body }}}</div>
+            <div class="col-md-12" style="margin-bottom:10px">
+                {{> mapTpl }}
+            </div>
+        </div>
+        <div class="row">
+            {{#each postsList }}
+                <div class="panel panel-default col-md-12">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ title }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        {{{ body }}}
                         <div id="links">
                             {{#each images}}
                                 <a href="{{ url }}" title="{{ ../title}}" data-gallery="" target="_blank">
@@ -13,14 +20,9 @@
                                 </a>
                             {{/each}}
                         </div>
-                        {{ map }}
                     </div>
-                    <hr/>
-                {{/each}}
-            </div>
-            <div class="col-md-6">
-                {{> mapTpl }}
-            </div>
+                </div>
+            {{/each}}
         </div>
     </div>
     <div id="blueimp-gallery" class="blueimp-gallery">
